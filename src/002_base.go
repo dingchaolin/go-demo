@@ -14,6 +14,26 @@ import(
 //常量的定义
 const PI = 3.14
 
+//组定义
+const (
+	a = 1
+	b = 2
+	c = 3
+)
+
+//只能声明全局变量 函数体内不能使用
+var (
+	d = "fff"
+	e = ""
+	g = 234
+)
+
+type(
+	newType int
+	type1 float32
+)
+
+
 //全局变量的声明与赋值
 var name = "dingchaolin"
 

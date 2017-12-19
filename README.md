@@ -96,6 +96,34 @@ PKG_CONFIG="pkg-config"
 - go语言中，使用大小写来决定该常量 变量 类型 接口 结构 或者 函数 是否可以被外部包所调用
 - 根据约定 函数首字母小写即为private， 函数名首字母为大写 为 public
 
+# 基本类型
+- bool true false 只能使用true false 不能使用数字来代替true 或者 false 1字节
+- int/ uint 32位 或者 64位
+- int8 -128~127  uint8 0~255 1字节
+- byte uint8的别名
+- int16/uint16 2字节
+- int32(rune)/uint32 4字节
+- rune 用于做unicode相关的处理
+- int64/uint64 8字节
+- float32/float64 4/8字节 精确7/15位小数
+- 复数 complex64/complex128  8/16字节
+- uintptr  根据平台区分 32位还是64位  保存指针
+- 其他值类型 array struct string
+- 引用类型 slice map chan(多个协程沟通的通道 并发使用)
+- 接口类型 interface
+- 函数类型 func
+
+## 类型零值
+- 零值并不等于空值 而是当变量被声明为某种类型后的默认值 通常情况下值类型默认为0 bool 默认为false string默认为空字符串
+
+## 类型转换
+- go不存在隐式类型转换 所有的类型转换必须显示声明
+- 转换只能发生在两种相互兼容的类型之间
+- var a float32 = 1.1; b:= int(a)
+- 严格意义上讲type newInt int 这里并不能说是int的别名 而只是底层数据结构相同 在这里称为自定义类型
+- 在进行类型转换的时候仍然需要显式转换 但是byte 和 rune 确确实实为unit8 和 int32的别名 可以进行相互转换
+
+
  
 
 
