@@ -76,6 +76,26 @@ PKG_CONFIG="pkg-config"
 # go run
 - go run main.go 生成可执行文件
 
+# 内置关键字
+- break default func interface select case defer go map struct
+- chan else goto package switch const fallthrough if range type
+- continue fir import return var
+
+# go程序结构
+- go程序是通过package来组织的
+- package 必须放在非注释的第一行
+- 只有package名称为main的包可以包含main函数
+- 一个可执行程序有且仅有一个main包
+- 通过import关键字来导入其他非main包
+- 通过const关键字来进行常量的定义
+- 通过在函数体外部使用var关键字进行全局变量的声明与赋值
+- 通过type关键字进行结果struct或者接口interface的声明
+- 通过func关键字来进行函数的声明
+
+# 可见性规则
+- go语言中，使用大小写来决定该常量 变量 类型 接口 结构 或者 函数 是否可以被外部包所调用
+- 根据约定 函数首字母小写即为private， 函数名首字母为大写 为 public
+
  
 
 
