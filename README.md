@@ -13,6 +13,21 @@
 - -v 标记意味着会打印出被构建的代码包的名字
 - go get -v -u -x github.com/hyper-carrot/go_lib
 
+### glide 包管理工具
+- brew install glide
+- glide create|init 初始化项目并创建glide.yaml文件
+- glide get 获取单个包
+　　--all-dependencies 会下载所有关联的依赖包
+　　-s 删除所有版本控制，如.git
+　　-v 删除嵌套的vendor
+- glide install 安装包
+- glide update|up 更新包
+
+### glide 举例
+- glide get github.com/mattn/go-adodb
+- glide update 
+- 上面2个命令执行完 就会把当前包 已经当前包的所有依赖都安装好了
+
 # 什么是go
 - go是一门并发支持，垃圾回收的编译系统编程语言，圣在创造一门具有在静态编译语言的高性能和动态语言的高效开发之间拥有一个良好的平衡点。
 
