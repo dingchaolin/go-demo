@@ -14,6 +14,7 @@
 - go get -v -u -x github.com/hyper-carrot/go_lib
 
 ### glide 包管理工具
+- 每次使用glide 都要先执行 export GOPATH=`pwd`
 - brew install glide
 - glide create|init 初始化项目并创建glide.yaml文件
 - glide get 获取单个包
@@ -22,6 +23,7 @@
 　　-v 删除嵌套的vendor
 - glide install 安装包
 - glide update|up 更新包
+
 
 ### glide 举例
 - glide get github.com/mattn/go-adodb
