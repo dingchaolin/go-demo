@@ -302,6 +302,28 @@ PKG_CONFIG="pkg-config"
 - 反射会将匿名字段作为独立字段（匿名字段本质）
 - 想要利用反射修改对象状态 前提是interface.data 是 settable 即 pointer-interface
 - 通过反射可以动态调用方法
+
+# goroutine
+- 超级线程池
+- 每个goroutine只占用4-5kb 和 由于实现机制而大幅减少创建和销毁goroutine的开销 是Go号称高并发的根本原因
+- go可以设置使用核数
+- 通信来共享内存 而不是共享内存来通信
+
+## Channel
+- Channel 是 goroutine沟通的桥梁 大都是阻塞同步的
+- 通过make创建 close关闭
+- Channel是引用类型
+- 可以使用for range来迭代不断操作channel
+- 可以设置单向或者双向通道
+- 可以设置缓存大小 在未被填满钱不会发生阻塞
+- 无缓存通道 取的操作应该改先于放
+- 有缓存是异步的 无缓存是同步的
+
+## select
+- 可以处理一个或者多个channel的发送与接收
+- 同时又多个可用的channel时按随机顺序处理
+- 可用空的select来阻塞main函数
+- 可以设置超时
   
 
 
