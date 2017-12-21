@@ -295,6 +295,13 @@ PKG_CONFIG="pkg-config"
 - 接口同样支持匿名字段的方法
 - 接口也可实现类型oop中的多态
 - 空接口可以作为任何类型数据的容器
+
+# 反射 reflection
+- 反射可以大大提高程序的灵活性 使得interface{}有更大的发挥余地
+- 反射使用TypeOf 和 ValueOf 函数从接口中获取目标对象信息
+- 反射会将匿名字段作为独立字段（匿名字段本质）
+- 想要利用反射修改对象状态 前提是interface.data 是 settable 即 pointer-interface
+- 通过反射可以动态调用方法
   
 
 
