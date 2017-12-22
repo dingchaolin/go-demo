@@ -30,6 +30,19 @@
 - glide update 
 - 上面2个命令执行完 就会把当前包 已经当前包的所有依赖都安装好了
 
+### glide 安装包的过程
+- 以创建一个webApp项目为例子
+- 1. 创建webApp 文件夹
+- 2. cd webApp
+- 3. mkdir src bin pkg
+- 4. export GOPATH=`pwd`
+- 5. cd src
+- 6. glide init
+- 7. glide get github.com/mattn/go-adodb
+- 8. glide update
+- 按顺序执行以上几步即可
+
+
 # 什么是go
 - go是一门并发支持，垃圾回收的编译系统编程语言，圣在创造一门具有在静态编译语言的高性能和动态语言的高效开发之间拥有一个良好的平衡点。
 
@@ -325,5 +338,16 @@ PKG_CONFIG="pkg-config"
 - 可用空的select来阻塞main函数
 - 可以设置超时
   
-
-
+  
+# 占位符
+```
+占位符     说明                           举例                   输出
+%v      相应值的默认格式。            Printf("%v", people)   {zhangsan}，
+%+v     打印结构体时，会添加字段名     Printf("%+v", people)  {Name:zhangsan}
+%#v     相应值的Go语法表示            Printf("#v", people)   main.Human{Name:"zhangsan"}
+%T      相应值的类型的Go语法表示       Printf("%T", people)   main.Human
+%%      字面上的百分号，并非值的占位符  Printf("%%")            %
+```
+- %d 十进制
+- %s 字符串
+- %p 地址
