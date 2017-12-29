@@ -24,6 +24,12 @@ func main(){
 
 	fmt.Println( s1 );
 
+	sa := []int{1,2,3,4,5,6}
+	sa = append( sa[:5], sa[6:]...)
+	fmt.Println( sa );
+
+
+
 
 }
 
