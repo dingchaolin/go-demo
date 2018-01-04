@@ -128,7 +128,7 @@ func HttpPost(url string, form interface{} )Tag_HttpResponse{
 	}
 
 	response,err := client.Do(request)
-	fmt.Println( err )
+
 	if err != nil {
 		elapsed := int(time.Since(start).Seconds()*1000)
 		errMsg := fmt.Sprintf("%v", err )
@@ -157,25 +157,50 @@ func HttpPost(url string, form interface{} )Tag_HttpResponse{
 	}
 }
 
+
+
+//func main(){
+//	//url := "http://127.0.0.1:3333/200"
+//	//url := "http://localhost:3333/200"
+//	url := "http://www.dcl.com:3333/200"
+//	//url := "http://www.baidu.com"
+//	//form := USER{
+//	//	Name:"dingchaolin",
+//	//	Age: 23,
+//	//	Sex: 1,
+//	//}
+//	//json, _ := json.Marshal( form )
+//	//fmt.Println( string(json) )
+//	//ret := HttpPost( url, form )
+//	user := USER{
+//		Name:"",
+//		Age:0,
+//		Sex:0,
+//	}
+//	ret := HttpGet( url )
+//	json.Unmarshal( []byte(ret.Body), &user)
+//	fmt.Println( "ret ========", ret , user, user.Name)
+//}
+
+ func Post( url string, form interface{}, ch chan Tag_HttpResponse ){
+	 ch <- HttpPost( url, form )
+ }
 func main(){
-	//url := "http://127.0.0.1:3333/200"
-	//url := "http://localhost:3333/200"
-	url := "http://www.dcl.com:3333/200"
-	//url := "http://www.baidu.com"
-	//form := USER{
-	//	Name:"dingchaolin",
-	//	Age: 23,
-	//	Sex: 1,
-	//}
-	//json, _ := json.Marshal( form )
-	//fmt.Println( string(json) )
-	//ret := HttpPost( url, form )
-	user := USER{
-		Name:"",
-		Age:0,
-		Sex:0,
+	url := "http://127.0.0.1:3333/200"
+
+	form := USER{
+		Name:"dingchaolin",
+		Age: 23,
+		Sex: 1,
 	}
-	ret := HttpGet( url )
-	json.Unmarshal( []byte(ret.Body), &user)
-	fmt.Println( "ret ========", ret , user, user.Name)
+
+	ch := make( chan Tag_HttpResponse  )
+
+	go Post( url, form, ch )
+
+	res := <- ch
+
+	fmt.Println( "return====", res)
+
+
 }
