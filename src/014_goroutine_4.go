@@ -9,16 +9,18 @@ import (
 func main(){
 	runtime.GOMAXPROCS( runtime.NumCPU() )//设置使用cpu的核数
 	wg := sync.WaitGroup{}
-	wg.Add( 10 )
-	for i := 0; i < 10; i ++{
+	//wg.Add( 10 )
+	for i := 0; i < 100; i ++{
+		wg.Add( 1 )
 		go GO1( &wg, i )
 	}
 	wg.Wait()
+
 }
 
 func GO1( wg * sync.WaitGroup, index int){
 	a := 1
-	for i := 1; i < 1000000000; i ++ {
+	for i := 1; i < 5; i ++ {
 		a += i
 	}
 	fmt.Println( index, a )
