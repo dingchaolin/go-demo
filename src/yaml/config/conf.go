@@ -26,6 +26,7 @@ type Config struct {
 type MyConfig struct {
 	Name string
 	Age  int
+	MySex int
 }
 
 func NewConfig(path string) (*Config, error) {
