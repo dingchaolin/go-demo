@@ -1,3 +1,15 @@
 package: .
 import:
-- package: parse
+- package: github.com/go-sql-driver/mysql
+  version: ^1.3.0
+- package: github.com/go-yaml/yaml
+- package: github.com/jmoiron/sqlx
+  subpackages:
+  - reflectx
+- package: github.com/tidwall/buntdb
+  version: ^1.0.0
+- package: google.golang.org/appengine/cloudsql
+testImport:
+- package: github.com/lib/pq
+- package: github.com/mattn/go-sqlite3
+  version: ^1.6.0
