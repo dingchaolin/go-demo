@@ -1,7 +1,7 @@
 package main
 
 func main(){
-	str := "ViewCount"
+	//str := "ViewCount"
 
 
 }
